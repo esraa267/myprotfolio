@@ -1,6 +1,6 @@
 :root {
   --primaryColor: #ff274b;
-  --secondaryColor: #ff7d93;
+  --secondaryColor: #f7b900;
   --lightColor: #ffff;
   --bgColor1: #171a1c;
   --bgColor2: #22282a;
@@ -17,31 +17,46 @@ html {
   font-size: 16px;
   color: var(--lightColor);
 }
+h1 {
+  font-size: 4.65rem;
+  margin: 2rem 0 0;
+}
+h2 {
+  font-size: 2.2rem;
+  letter-spacing: 0.12rem;
+  cursor: pointer;
+}
+h3 {
+  font-size: 1.5rem;
+  /* margin-bottom: 3.5rem; */
+}
+h4 {
+  font-size: 2.25rem;
+  letter-spacing: 0.12rem;
+  color: var(--secondaryColor);
+}
+
+h5 {
+  font-size: 1.37rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+span {
+  color: var(--primaryColor);
+}
+p {
+  color: var(--lightColor);
+  letter-spacing: 1px;
+  line-height: 1.7rem;
+  font-size: 1.2rem;
+}
+
 .home {
   width: 100%;
   height: 100vh;
   background-color: var(--bgColor1);
   display: flex;
   flex-direction: column;
-}
-span {
-  color: var(--primaryColor);
-}
-h5 {
-  font-size: 1.37rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: 2px;
-}
-p {
-  color: var(--lightColor);
-  letter-spacing: 1px;
-  line-height: 1.3rem;
-  font-size: 1rem;
-}
-h2 {
-  font-size: 2.2rem;
-  letter-spacing: 0.12rem;
-  cursor: pointer;
 }
 nav {
   padding: 2.8rem var(--padding) 0;
@@ -72,6 +87,7 @@ nav ul li a:hover {
   border-radius: 30px;
   border: 2px solid transparent;
   transition: 0.5s;
+  font-size: 1.8rem;
 }
 .btn:hover {
   background-color: transparent;
@@ -85,25 +101,15 @@ nav ul li a:hover {
   justify-content: space-between;
 }
 .container-text {
-  position: relative;
+  /* position: relative; */
   bottom: 70px;
-}
-h1 {
-  font-size: 4.65rem;
-  margin: 2rem 0 0;
-}
-h3 {
-  font-size: 1.5rem;
-  margin-bottom: 3.5rem;
-}
-h4 {
-  font-size: 1.25rem;
-  letter-spacing: 0.12rem;
-  color: var(--secondaryColor);
 }
 
 .social {
   margin-top: 3.5rem;
+}
+.social a {
+  text-decoration: none;
 }
 .social img {
   margin-right: 2rem;
@@ -153,24 +159,23 @@ h4 {
 .text-center {
   text-align: center;
 }
-.box{display: flex;
-  justify-content:space-around ;
+.box {
+  display: flex;
+  justify-content: space-around;
 }
-.card{
+.card {
   width: 300px;
   background-color: var(--bgColor2);
   border-radius: 20px;
   padding: 1.3rem 2rem;
   text-align: center;
   margin-top: 20px;
-
 }
-.card i{
+.card i {
   font-size: 3.12rem;
   text-align: center;
   color: var(--secondaryColor);
   margin: 2rem;
-
 }
 .skills {
   background-color: var(--bgColor2);
@@ -185,16 +190,17 @@ h4 {
 .skills .container-images img {
   width: 90%;
 }
-.skills .container-skills{
-  width: 40%;
+.skills .container-skills {
+  width: 50%;
 }
-.content-skills{
+.content-skills {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 4rem;
 }
-.skill{
-  width: 100%;
-  height: 100%;
+.skill {
+  width: 100px;
+  height: 100px;
   background-color: var(--lightColor);
   border-radius: 50%;
   margin: 0 2rem 2rem 0;
@@ -202,4 +208,417 @@ h4 {
   align-items: center;
   justify-content: center;
 }
-.skill img{width: 70%;}
+.skill img {
+  width: 70%;
+}
+footer {
+  padding: 2rem var(--padding);
+
+  background-color: var(--bgColor1);
+}
+footer .content-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+footer .content-footer p {
+  color: var(--lightColor);
+  text-align: center;
+  width: 500px;
+}
+footer .content-footer .end {
+  color: var(--primaryColor);
+  margin-top: 1rem;
+}
+/*----------------------------------------------------------------
+*-------------------- MENU
+-----------------------------------------------------------------*/
+#menu {
+  display: none;
+  position: relative;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  user-select: none;
+}
+#menu span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  background-color: var(--lightColor);
+  border-radius: 6px;
+  transform-origin: 0 0;
+  transition: 0.5s;
+  margin-bottom: 5px;
+}
+#menu.is-active span:nth-child(1) {
+  transform: translate(0px, -2px) rotate(45deg);
+}
+#menu.is-active span:nth-child(2) {
+  opacity: 0;
+}
+#menu.is-active span:nth-child(3) {
+  transform: translate(-3px, 3px) rotate(-45deg);
+}
+#menu.is-active span {
+  background-color: var(--primaryColor);
+}
+/*----------------------------------------------------------------
+*-------------------- MEDIA QUERIES
+-----------------------------------------------------------------*/
+@media screen and (max-width: 575px) {
+  :root {
+    --padding: 1.5rem;
+  }
+  html {
+    font-size: 13px;
+  }
+  .home .container-images {
+    display: none;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 82px;
+    padding-top: 0;
+    background-color: var(--bgColor1);
+    border-bottom: 1px solid var(--bgColor2);
+    z-index: 100;
+  }
+  nav > a {
+    display: none;
+  }
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    height: 100vh;
+    background-color: var(--bgColor2);
+  }
+  nav ul li {
+    display: block;
+    text-align: left;
+    margin: 50px;
+    font-size: 2rem;
+  }
+  nav ul.is-active {
+    display: block;
+  }
+  .social {
+    margin-top: 70px;
+  }
+  h3 {
+    margin-top: 2.5rem;
+  }
+  #menu {
+    display: block;
+  }
+  .about .container-images {
+    display: none;
+  }
+  .about .container-text {
+    width: 100%;
+  }
+  .box {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .skills .container-images {
+    display: none;
+  }
+  .skills .container-skills {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content-skills {
+    margin-top: 2rem;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .skill {
+    /* margin: 0 1rem 1rem 0; */
+    width: 80px;
+    height: 80px;
+  }
+  footer .content-footer p {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  :root {
+    --padding: 1.5rem;
+  }
+  html {
+    font-size: 13px;
+  }
+  .home .container-images {
+    display:none;
+  }
+  .content{
+    padding-top:82px;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 82px;
+    padding-top: 0;
+    background-color: var(--bgColor1);
+    border-bottom: 1px solid var(--bgColor2);
+    z-index: 100;
+  }
+  nav > a {
+    display: none;
+  }
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    height: 100vh;
+    background-color: var(--bgColor2);
+  }
+  nav ul li {
+    display: block;
+    text-align: left;
+    margin: 50px;
+    font-size: 2rem;
+  }
+  nav ul.is-active {
+    display: block;
+  }
+  .social {
+    margin-top: 30px;
+  }
+  h3 {
+    margin-top: 2.5rem;
+  }
+  #menu {
+    display: block;
+  }
+  .about .container-images {
+    display: none;
+  }
+  .about .container-text {
+    width: 100%;
+  }
+  .box {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .skills .container-images {
+    display: none;
+  }
+  .skills .container-skills {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content-skills {
+    margin-top: 2rem;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .skill {
+    /* margin: 0 1rem 1rem 0; */
+    width: 80px;
+    height: 80px;
+  }
+  footer .content-footer p {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  :root {
+    --padding: 1.5rem;
+  }
+  html {
+    font-size: 13px;
+  }
+  .home .container-images {
+    display: none;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 82px;
+    padding-top: 0;
+    background-color: var(--bgColor1);
+    border-bottom: 1px solid var(--bgColor2);
+    z-index: 100;
+  }
+  nav > a {
+    display: none;
+  }
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+    height: 100vh;
+    background-color: var(--bgColor2);
+  }
+  nav ul li {
+    display: block;
+    text-align: left;
+    margin: 50px;
+    font-size: 2rem;
+  }
+  nav ul.is-active {
+    display: block;
+  }
+  .social {
+    margin-top: 70px;
+  }
+  h3 {
+    margin-top: 2.5rem;
+  }
+  #menu {
+    display: block;
+  }
+  .about .container-images {
+    display: none;
+  }
+  .about .container-text {
+    width: 100%;
+  }
+  .box {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .skills .container-images {
+    display: none;
+  }
+  .skills .container-skills {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content-skills {
+    margin-top: 2rem;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .skill {
+    /* margin: 0 1rem 1rem 0; */
+    width: 80px;
+    height: 80px;
+  }
+  footer .content-footer p {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1279px) {
+  :root {
+    --padding: 1.5rem;
+  }
+  html {
+    font-size: 13px;
+  }
+  .home .container-images img {
+  height: auto;
+  width:100%;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 82px;
+    padding-top: 0;
+    background-color: var(--bgColor1);
+    border-bottom: 1px solid var(--bgColor2);
+    z-index: 100;
+  }
+  nav > a {
+    display: none;
+  }
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+
+    height: 100vh;
+    background-color: var(--bgColor2);
+  }
+  nav ul li {
+    display: block;
+    text-align: left;
+    margin: 50px;
+    font-size: 2rem;
+  }
+  nav ul.is-active {
+    display: block;
+  }
+  .social {
+    margin-top: 70px;
+  }
+  h3 {
+    margin-top: 2.5rem;
+  }
+  #menu {
+    display: block;
+  }
+ 
+  .about .container-text {
+    width: 60%;
+  }
+  .box {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .skills .container-skills {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .content-skills {
+    margin-top: 2rem;
+width:70%;
+    align-items: center;
+    justify-content: center;
+  }
+  .skill {
+    /* margin: 0 1rem 1rem 0; */
+    width: 80px;
+    height: 80px;
+  }
+  footer .content-footer p {
+    width: 100%;
+  }
+}
