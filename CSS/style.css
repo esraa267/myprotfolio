@@ -503,7 +503,7 @@ footer .content-footer .end {
     display: block;
   }
   .about .container-images {
-    display: none;
+    display: block;
   }
   .about .container-text {
     width: 100%;
